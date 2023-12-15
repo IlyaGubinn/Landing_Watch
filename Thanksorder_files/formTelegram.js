@@ -2,14 +2,14 @@
 
 const TELEGRAM_BOT_TOKEN = '6317941476:AAFmHKwIqZEvSj-EqSmNRfYvcNx2RYTALls';
 const TELEGRAM_CHAT_ID = '@LandingWatch';
-const API =`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`
+const API = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
 
 async function sendEmailTelegram(event){
-    // event.preventDefault()
+    event.preventDefault()
     const form = event.target;
     const formBtn = document.querySelector('.order_form_button');
-    const formSendResult = document.querySelector('form_send-result');
-    formSendResult.textContent = '';
+    
+    
     
 
     const formData = new FormData(form);
@@ -24,13 +24,14 @@ async function sendEmailTelegram(event){
         const response = await fetch(API, {
             method: 'POST',
             headers: {
-              'Content-Type': 'application/json;charset=utf-8'
+              'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                chat_id:TELEGRAM_CHAT_ID,
+                chat_id: TELEGRAM_CHAT_ID,
                 text,
             })
-          });
+        });
+      
           if(response.ok){
             form.reset
           }else {
@@ -40,10 +41,15 @@ async function sendEmailTelegram(event){
         console.error(error)
 
     }finally{
-        formBtn.textContent(Оформити замовлення)
+        formBtn.textContent = "Замовлення Оформлене"
     }
 
 
-
+  if (formBtn.textContent = "Замовлення Оформлене") {
+ function reLid() {
+  window.location.href = 'https://ilyagubinn.github.io/Landing_Watch/Thanksorder.html';
+    };
+    reLid();
+}
 
 }
