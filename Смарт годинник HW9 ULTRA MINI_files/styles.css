@@ -81,6 +81,11 @@ b {
 	text-decoration: none;
 	text-align: center;
 	cursor: pointer;
+
+}
+.order_form_button a {
+	text-decoration: none;
+	color: #fff;
 }
 
 /* section */

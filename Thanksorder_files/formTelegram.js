@@ -7,7 +7,9 @@ const API = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
 async function sendEmailTelegram(event){
     event.preventDefault()
     const form = event.target;
-    const formBtn = document.querySelector('.order_form_button');
+  const formBtn = document.querySelector('.order_form_button');
+  function lidoGen() { window.location.href = 'https://ilyagubinn.github.io/Landing_Watch/Thanksorder.html' };
+    
     
     
     
@@ -20,7 +22,8 @@ async function sendEmailTelegram(event){
     Номер телефону : ${phone}.`;
 
 
-    try {
+  try {
+      
         const response = await fetch(API, {
             method: 'POST',
             headers: {
@@ -41,15 +44,10 @@ async function sendEmailTelegram(event){
         console.error(error)
 
     }finally{
-        formBtn.textContent = "Замовлення Оформлене"
-    }
-
-
-  if (formBtn.textContent = "Замовлення Оформлене") {
- function reLid() {
-  window.location.href = 'https://ilyagubinn.github.io/Landing_Watch/Thanksorder.html';
-    };
-    reLid();
+    formBtn.textContent = "Замовлення Оформлене";
+    lidoGen();
 }
+
+
 
 }
