@@ -17,7 +17,12 @@ async function sendEmailTelegram(event){
     const formData = new FormData(form);
     const formDateObject = Object.fromEntries(formData.entries());
     const { name,phone } = Object.fromEntries(new FormData(form).entries())
-    const text = `Замовлення:
+    function getRandomInt(min, max) {
+      min = Math.ceil(min);
+      max = Math.floor(max);
+      return Math.floor(Math.random() * (max - min) + min);
+    }
+    const text = `Замовлення N356${getRandomInt(1,9)}:
     ім'я : ${name},
     Номер телефону : ${phone}.`;
 
